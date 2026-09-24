@@ -1,0 +1,14 @@
+node_modules/
+.env
+.env.*
+!.env.example
+data/users.json
+data/bookings.json
+data/contacts.json
+data/quotations.json
+data/subscribers.json
+data/business-profile.json
+*.log
+/out*.html
+/journal-preview.png
+/journal-mobile-preview.png

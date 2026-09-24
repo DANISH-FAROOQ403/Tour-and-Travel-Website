@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Paris | Wanderly</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header class="navbar">
+    <div class="nav-left">
+        <a href="/" class="logo">
+            <i class="fa-solid fa-compass"></i>
+            Wanderly
+        </a>
+        <nav id="navMenu">
+            <a href="/">Home</a>
+            <a href="/destinations">Destinations</a>
+            <a href="/packages">Packages</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </div>
+
+    <div class="nav-right">
+        <div class="nav-search">
+            <button class="theme-btn" onclick="toggleNavSearch()"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <div class="nav-search-input">
+                <form onsubmit="submitNavSearch(event)">
+                    <input type="search" placeholder="Search destinations..." aria-label="Search destinations" />
+                </form>
+            </div>
+        </div>
+
+        <button class="theme-btn" onclick="toggleTheme()">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button class="menu-btn" onclick="toggleDrawer()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div id="navDrawer" class="nav-drawer" aria-hidden="true">
+        <button class="close-drawer" onclick="toggleDrawer()">&times;</button>
+        <nav class="drawer-nav">
+            <a href="/">Home</a>
+            <a href="/destinations">Destinations</a>
+            <a href="/packages">Packages</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="/login" class="nav-login">Login</a>
+        </nav>
+        <div class="drawer-actions">
+            <form onsubmit="submitNavSearch(event)">
+                <input type="search" placeholder="Search destinations..." />
+            </form>
+        </div>
+    </div>
+</header>
+
+
+    <section class="section destination-hero" style="padding-top:110px;">
+
+        <div class="breadcrumb">
+            <a href="/destinations">Back to Destinations</a>
+        </div>
+
+        <div class="hero-grid">
+
+            <div class="hero-media">
+                <div class="hero-image-wrap">
+                    <img id="mainHeroImage" src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Paris">
+                    
+                        <div class="duration-pill"><i class="fa-regular fa-calendar"></i> 4 Nights 5 Days</div>
+                    
+                </div>
+
+                <div class="gallery-thumbs">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" data-full="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" class="thumb active">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" data-full="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" class="thumb">
+                </div>
+            </div>
+
+            <aside class="detail-panel">
+                <div class="detail-eyebrow">DETAILS</div>
+                <h1 class="detail-title">Paris</h1>
+
+                <div class="detail-meta">
+                    <div class="rating">
+                        <strong>4.8</strong>
+                        <i class="fa-solid fa-star" style="color:#f59e0b;margin-left:6px;"></i>
+                    </div>
+                    <div class="price">From <strong>₹69,999</strong></div>
+                </div>
+
+                <p class="detail-description">Explore the Eiffel Tower, museums, cafés and romantic streets.</p>
+
+                <div class="detail-features">
+                    <div class="feature"><i class="fa-solid fa-location-dot"></i> <span>France</span></div>
+                    <div class="feature"><i class="fa-solid fa-tags"></i> <span>City</span></div>
+                </div>
+
+                <div class="detail-actions">
+                    <button class="btn primary-btn" onclick="openBooking('Paris')">Book Now</button>
+                    <a class="btn outline-btn" href="https://wa.me/?text=I%20am%20interested%20in%20Paris">WhatsApp</a>
+                </div>
+
+                <div class="itinerary">
+                    <h4>Suggested Itinerary</h4>
+                    <ol>
+                        <li>Arrival and local sightseeing.</li>
+                        <li>Guided tour of nearby attractions.</li>
+                        <li>Relaxation and local experiences.</li>
+                    </ol>
+                </div>
+
+            </aside>
+
+        </div>
+
+        <section class="why-section premium-why">
+            <div class="section-heading center">
+                <span>WHY VISIT</span>
+                <h2>Top Reasons to Go</h2>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fa-solid fa-mountain feature-icon"></i>
+                    <h3>Scenic Views</h3>
+                    <p>Beautiful landscapes and memorable photo spots.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-people-roof feature-icon"></i>
+                    <h3>Local Culture</h3>
+                    <p>Engage with warm local communities and traditions.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-snowflake feature-icon"></i>
+                    <h3>Outdoor Activities</h3>
+                    <p>Hiking, skiing (seasonal) and nature excursions.</p>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeBooking()">&times;</button>
+            <h2>Book Your Trip</h2>
+            <p>Reserve your dream destination.</p>
+            <form id="bookingForm">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input id="bookingDestination" name="destination" readonly required>
+                <input type="date" name="date" required>
+                <input type="number" name="travelers" min="1" value="2" required>
+                <button class="btn primary-btn">Confirm Booking</button>
+            </form>
+            <div id="bookingMessage"></div>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+
+</body>
+
+</html>
